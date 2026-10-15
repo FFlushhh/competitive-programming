@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "C++: Build active file",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "/opt/homebrew/bin/g++-15",
             "args": [
                 "${file}",
                 "-std=gnu++23",
@@ -13,10 +13,25 @@
                 "-Wextra",
                 "-g",
                 "-I",
-                "${workspaceFolder}\\AtCoderLibrary",
+                "${workspaceFolder}/Library",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
+            "windows": {
+                "command": "C:\\mingw64\\bin\\g++.exe",
+                "args": [
+                    "${file}",
+                    "-std=gnu++23",
+                    "-O2",
+                    "-Wall",
+                    "-Wextra",
+                    "-g",
+                    "-I",
+                    "${workspaceFolder}\\Library",
+                    "-o",
+                    "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                ]
+            },
             "osx": {
                 "command": "/opt/homebrew/bin/g++-15",
                 "args": [
@@ -27,9 +42,9 @@
                     "-Wextra",
                     "-g",
                     "-I",
-                    "${workspaceFolder}/AtCoderLibrary",
+                    "${workspaceFolder}/Library",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
+                    "${fileDirname}/${fileBasenameNoExtension}.out"
                 ]
             },
             "options": {
@@ -40,31 +55,8 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": false
-            }
-        },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++-15 アクティブなファイルのビルド",
-            "command": "/opt/homebrew/bin/g++-15",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": {
-                "kind": "build",
                 "isDefault": true
-            },
-            "detail": "デバッガーによって生成されたタスク。"
+            }
         }
     ]
 }
