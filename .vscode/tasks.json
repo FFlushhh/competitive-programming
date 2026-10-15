@@ -15,7 +15,7 @@
                 "-I",
                 "${workspaceFolder}/Library",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
             "windows": {
                 "command": "C:\\mingw64\\bin\\g++.exe",
@@ -44,7 +44,7 @@
                     "-I",
                     "${workspaceFolder}/Library",
                     "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
+                    "${fileDirname}/${fileBasenameNoExtension}.out"
                 ]
             },
             "options": {
