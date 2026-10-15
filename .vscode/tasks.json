@@ -1,0 +1,70 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C++: Build active file",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "${file}",
+                "-std=gnu++23",
+                "-O2",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "-I",
+                "${workspaceFolder}\\AtCoderLibrary",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "osx": {
+                "command": "/opt/homebrew/bin/g++-15",
+                "args": [
+                    "${file}",
+                    "-std=gnu++23",
+                    "-O2",
+                    "-Wall",
+                    "-Wextra",
+                    "-g",
+                    "-I",
+                    "${workspaceFolder}/AtCoderLibrary",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}"
+                ]
+            },
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++-15 アクティブなファイルのビルド",
+            "command": "/opt/homebrew/bin/g++-15",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "デバッガーによって生成されたタスク。"
+        }
+    ]
+}

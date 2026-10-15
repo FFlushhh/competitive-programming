@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+using ull = unsigned long long;
+#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
+#define rep1(i, n) for (int i = 1; i <= (int)(n); ++i)
+
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int n, m;
+    cin >> n >> m;
+    vector<int> a(m);
+    rep(i, m) cin >> a[i];
+    int idx = 0;
+    vector<int> tmp;
+    rep1(i, n) {
+        if (idx < m && a[idx] == i) {
+            ++idx;
+            tmp.emplace_back(i);
+        } else {
+            reverse(tmp.begin(), tmp.end());
+            cout << i << " ";
+            for (int v : tmp) cout << v << " ";
+            tmp.clear();
+        }
+    }
+    return 0;
+}
