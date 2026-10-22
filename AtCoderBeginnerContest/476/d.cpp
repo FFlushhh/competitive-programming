@@ -64,7 +64,7 @@ int main()
     
     // Bのおつりもらえる順
     rep(i, m) {
-        if (!okb[i] && )
+        // if (!okb[i] && )
     }
 
     // Bの安い順
